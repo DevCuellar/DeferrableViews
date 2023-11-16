@@ -1,0 +1,28 @@
+<div class="row h-100">
+  <div class="col-3 h-100 d-flex flex-column justify-content-center">
+    <dc-menu (onPage)="setPage($event)"></dc-menu>
+  </div>
+  <div
+    class="d-flex col-9 h-100 pt-4 pb-4 overflow-auto justify-content-center"
+  >
+    @switch (page()) { @case('when'){
+    <dc-when></dc-when>
+    } @case('idle'){
+    <dc-idle></dc-idle>
+    } @case('immediate'){
+    <dc-immediate></dc-immediate>
+    } @case('timer'){
+    <dc-timer></dc-timer>
+    } @case('viewport'){
+    <dc-viewport></dc-viewport>
+    } @case('interaction'){
+    <dc-interaction></dc-interaction>
+    } @case('hover'){
+    <dc-hover></dc-hover>
+    } @case('prefetch'){
+    <dc-prefetch></dc-prefetch>
+    } @case('tests'){
+    <dc-tests></dc-tests>
+    } }
+  </div>
+</div>

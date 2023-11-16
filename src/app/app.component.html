@@ -1,0 +1,22 @@
+<div
+  class="container d-flex flex-column h-100 justify-content-center align-items-center"
+>
+  <div class="row mb-4">
+    <h2>Angular 17 - Deferrable Views</h2>
+  </div>
+  <div class="row w-100 h-75 card">
+    @defer(when appStarted()){
+    <dc-main class="h-100"></dc-main>
+    }@placeholder(minimum 1s){
+    <div class="col d-flex align-items-center justify-content-center">
+      <button class="btn btn-primary btn-lg" (click)="appStarted.set(true)">
+        Iniciar Aplicacion
+      </button>
+    </div>
+    }@loading(after 150ms; minimum 2s) {
+      <dc-loader></dc-loader>
+    }@error {
+      <dc-error></dc-error>
+    }
+  </div>
+</div>

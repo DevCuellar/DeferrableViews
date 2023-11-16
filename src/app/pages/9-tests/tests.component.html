@@ -1,0 +1,13 @@
+<h3>Pruebas de tests</h3>
+<br />
+<div class="d-flex justify-content-center w-100">
+  @defer (on timer(4s)) {
+  <dc-cat></dc-cat>
+  }@loading(minimum 2s) {
+  <dc-loader></dc-loader>
+  }@placeholder(minimum 2s) {
+  <dc-placeholder></dc-placeholder>
+  }@error {
+  <dc-error></dc-error>
+  }
+</div>
